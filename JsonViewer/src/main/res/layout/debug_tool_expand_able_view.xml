@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:divider="@android:color/black"
+  android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/title"
+    style="@style/TextAppearance.AppCompat.Body2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:ellipsize="end"
+    android:paddingLeft="15dp"
+    android:paddingTop="5dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="5dp"
+    android:textColor="@android:color/holo_red_light"
+    tools:text="titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle" />
+
+  <FrameLayout
+    android:id="@+id/wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <HorizontalScrollView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:nestedScrollingEnabled="true"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+        android:id="@+id/content"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
+        android:textIsSelectable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="described\n\n\n\n\n\n\nescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribe"
+        tools:visibility="visible" />
+    </HorizontalScrollView>
+
+    <com.tenker.jsonviewer.FreeTouchHorizontalScrollView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:nestedScrollingEnabled="true"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:minWidth="400dp"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/debug_tool_json_item"
+        tools:visibility="visible" />
+    </com.tenker.jsonviewer.FreeTouchHorizontalScrollView>
+
+  </FrameLayout>
+</LinearLayout>

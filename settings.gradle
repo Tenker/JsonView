@@ -1,0 +1,3 @@
+include ':JsonViewer'
+include ':app'
+rootProject.name = "JsonView"
